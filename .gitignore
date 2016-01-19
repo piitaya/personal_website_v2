@@ -1,0 +1,5 @@
+client/node_modules
+client/assets/libs/bower_components
+
+server/node_modules
+server/config/*.json

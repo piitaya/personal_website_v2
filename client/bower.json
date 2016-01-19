@@ -1,0 +1,18 @@
+{
+  "name": "personal_website",
+  "version": "0.0.1",
+  "authors": [
+    "Bottein Paul <paul.bottein@gmail.com>"
+  ],
+  "directory": "assets/libs/",
+  "dependencies": {
+    "angular-ui-router": "~0.2.15",
+    "angular": "~1.4.8",
+    "angular-resource": "~1.4.8",
+    "angular-animate": "~1.4.8",
+    "angular-i18n": "~1.4.8",
+    "jquery": "~2.2.0",
+    "angular-materialize": "~0.1.2",
+    "Materialize": "materialize#~0.97.5"
+  }
+}
