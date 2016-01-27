@@ -1,22 +1,30 @@
-angular.module('app', [
-	'ngAnimate',
-	'ngResource',
-	'ui.router',
-	'ui.materialize',
-	'app.controllers',
-	'app.filters',
-	'app.services',
-	'app.directives'
-]);
+(function () {
+    'use strict';
+    angular
+		.module('app', [
+			'ngAnimate',
+			'ngResource',
+			'ui.router',
+			'ui.materialize',
+			'app.controllers',
+			'app.filters',
+			'app.services',
+			'app.directives'
+		]);
 
-/* Controllers */
-angular.module('app.controllers', []);
+	/* Controllers */
+	angular
+		.module('app.controllers', []);
 
-/* Filters */
-angular.module('app.filters', []);
+	/* Filters */
+	angular
+		.module('app.filters', []);
 
-/* Services */
-angular.module('app.services', []);
+	/* Services */
+	angular
+		.module('app.services', []);
 
-/* Directives */
-angular.module('app.directives', []);
+	/* Directives */
+	angular
+		.module('app.directives', []);
+})();

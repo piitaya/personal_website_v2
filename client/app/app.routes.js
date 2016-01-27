@@ -1,17 +1,23 @@
-angular.module('app').config(function ($stateProvider, $urlRouterProvider, $locationProvider){
+(function () {
+    'use strict';
+    angular
+        .module('app')
+        .config(config);
 
-    $urlRouterProvider.otherwise( function($injector) {
-        var $state = $injector.get("$state");
-        $state.go('home');
-    });
+    function config($stateProvider, $urlRouterProvider, $locationProvider) {
+        $locationProvider.html5Mode(true);
 
-    $locationProvider.html5Mode(true);
+        $stateProvider
+            .state ('home', {
+                url: '/',
+                templateUrl: 'app/components/home/home.html',
+                controller: 'HomeController',
+                controllerAs: 'vm'
+            });
 
-    $stateProvider
-
-    .state ('home', {
-        url: '/',
-        templateUrl: 'app/components/home/homeView.html',
-        controller: 'homeController as vm'
-    });
-});
+        $urlRouterProvider.otherwise( function($injector) {
+            var $state = $injector.get("$state");
+            $state.go('home');
+        });
+    }
+})();
