@@ -1,6 +1,6 @@
 {
 // MongoDB config
-  "MongoDB": {
-    "uri": "mongodb://<dbuser>:<dbpassword>@<dbhost>:<dbport>/<dbname>"
-  }
+	"MongoDB": {
+		"uri": "mongodb://<dbuser>:<dbpassword>@<dbhost>:<dbport>/<dbname>"
+	}
 }
