@@ -1,13 +1,13 @@
 (function () {
-    'use strict';
-    angular
-        .module('app')
-        .config(config);
+	'use strict';
+	angular
+		.module('app')
+		.config(config);
 
-    function config($stateProvider, $urlRouterProvider, $locationProvider) {
-        $locationProvider.html5Mode(true);
+	function config($stateProvider, $urlRouterProvider, $locationProvider) {
+		$locationProvider.html5Mode(true);
 
-        $stateProvider
+		$stateProvider
 
             .state ('main', {
                 abstract: true,
@@ -37,6 +37,6 @@
         $urlRouterProvider.otherwise( function($injector) {
             var $state = $injector.get("$state");
             $state.go('main.home');
-        });
-    }
+		});
+	}
 })();

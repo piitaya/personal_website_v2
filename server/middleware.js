@@ -1,7 +1,7 @@
 var jwt = require('jsonwebtoken'); // used to create, sign, and verify tokens
 
 exports.authenticateUser = function(req,res,next) {
-  // check header or url parameters or post parameters for token
+	// check header or url parameters or post parameters for token
 	var token = req.body.token || req.params.token || req.headers['x-access-token'];
 	if (req.headers["authorization"]) {
 		token = req.headers["authorization"].split(" ")[1];

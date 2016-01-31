@@ -1,6 +1,6 @@
 (function () {
-    'use strict';
-    angular
+	'use strict';
+	angular
 		.module('app', [
 			'ngAnimate',
 			'ngResource',

@@ -1,13 +1,13 @@
 <div class="parallax-container">
-    <div parallax>
-    	<img src="http://krescruz.github.io/angular-materialize/images/parallax1.jpg">
-    </div>
+	<div parallax>
+		<img src="http://krescruz.github.io/angular-materialize/images/parallax1.jpg">
+	</div>
 </div>
 <div class="container">
 	<ul class="collapsible popout" data-collapsible="accordion" watch>
-	    <li ng-repeat="single in vm.collapsibleElements">
-	        <div class="collapsible-header"><i class="{{single.icon}}"></i>{{single.title}}</div>
-	        <div class="collapsible-body"><p>{{single.content}}</p></div>
-	    </li>
+		<li ng-repeat="single in vm.collapsibleElements">
+			<div class="collapsible-header"><i class="{{single.icon}}"></i>{{single.title}}</div>
+			<div class="collapsible-body"><p>{{single.content}}</p></div>
+		</li>
 	</ul>
 </div>
