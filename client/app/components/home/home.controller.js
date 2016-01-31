@@ -10,5 +10,22 @@
 		var vm = this;
 
 		vm.collapsibleElements = homeService.getElements();
+
+		vm.events = [{
+			title: 'First heading',
+			content: 'Some awesome content.'
+		}, {
+			title: 'Second heading',
+			content: 'More awesome content.'
+		}, {
+			title: 'Second heading',
+			content: 'More awesome content.'
+		}, {
+			title: 'Second heading',
+			content: 'More awesome content.'
+		}, {
+			title: 'Second heading',
+			content: 'More awesome content.'
+		}];
 	}
 })();

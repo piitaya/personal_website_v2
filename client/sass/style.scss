@@ -1,3 +1,12 @@
+/*** Global ***/
+// Media Query Ranges
+$small-screen-up: 601px !default;
+$medium-screen-up: 993px !default;
+$large-screen-up: 1201px !default;
+$small-screen: 600px !default;
+$medium-screen: 992px !default;
+$large-screen: 1200px !default;
+
 body {
 	display: flex;
 	min-height: 100vh;
@@ -6,4 +15,111 @@ body {
 
 main {
 	flex: 1 0 auto;
+}
+
+$timeline-badge-size: 40px;
+$timeline-badge-margin: 10px;
+.timeline {
+	position: relative;
+	.timeline-event {
+		position: relative;
+		padding-top: 5px;
+		padding-bottom: 5px;
+		.timeline-content {
+			width: calc(50% - #{$timeline-badge-size/2 + 30px});
+		}
+
+		&::before { 
+			display: block;
+			content: "";
+			width: 2px;
+			height: calc(50% - #{$timeline-badge-size/2 + $timeline-badge-margin});
+			position: absolute;
+			background: rgb(210,210,210);
+			left: calc(50% - 1px);
+			top: 0;
+		}
+
+		&::after { 
+			display: block;
+			content: "";
+			width: 2px;
+			height: calc(50% - #{$timeline-badge-size/2 + $timeline-badge-margin});
+			position: absolute;
+			background: rgb(210,210,210);
+			left: calc(50% - 1px);
+			top: calc(50% + #{$timeline-badge-size/2 + $timeline-badge-margin});
+		}
+
+		&:first-child::before {
+			display: none;
+		}
+
+		&:last-child::after {
+			display: none;
+		}
+
+		&:nth-child(even) {
+			.timeline-content {
+				margin-left: calc(50% + #{$timeline-badge-size/2 + 30px});
+			}
+		}
+
+		&:nth-child(odd) {
+			.timeline-content {
+				margin-left: 0;
+			}
+		}
+	}
+
+	.timeline-badge {
+		display: block;
+		position: absolute;
+		width: $timeline-badge-size;
+		height: $timeline-badge-size;
+		background: rgb(210,210,210);
+		top: calc(50% - #{$timeline-badge-size / 2});
+		right: calc(50% - #{$timeline-badge-size / 2});
+		border-radius: 50%;
+		text-align: center;
+
+		cursor: default;
+		i {
+			font-size: $timeline-badge-size - 15px;
+			line-height: $timeline-badge-size;
+		}
+	}
+
+	@media (max-width: $small-screen) {
+		.timeline-event {
+			.timeline-content {
+				width: calc(100% - #{$timeline-badge-size + 30px});
+			}
+
+			&::before { 
+				left: $timeline-badge-size/2 - 1px;
+			}
+
+			&::after { 
+				left: $timeline-badge-size/2 - 1px;
+			}
+
+			&:nth-child(even) {
+				.timeline-content {
+					margin-left: 30px + $timeline-badge-size;
+				}
+			}
+
+			&:nth-child(odd) {
+				.timeline-content {
+					margin-left: 30px + $timeline-badge-size;
+				}
+			}
+		}
+
+		.timeline-badge {
+			left: 0;
+		}
+
+	}
 }
