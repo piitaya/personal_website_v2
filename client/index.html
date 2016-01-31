@@ -6,7 +6,7 @@
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<title>Personal Website</title>
-		
+		<link rel="icon" href="data:;base64,=">
 		<!-- Google Font -->
 		<link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 		<!-- Materialize CSS -->
@@ -15,21 +15,7 @@
 		<link href="assets/css/style.css" rel="stylesheet">
 	</head>
 	<body>
-		<div class="navbar-fixed">
-			<nav>
-				<div class="container">
-					<div class="nav-wrapper">
-						<a href="#" class="brand-logo">Logo</a>
-						<ul id="nav-mobile" class="right hide-on-med-and-down">
-							<li><a href="sass.html">Sass</a></li>
-							<li><a href="badges.html">Components</a></li>
-							<li><a href="collapsible.html">JavaScript</a></li>
-						</ul>
-					</div>
-				</div>
-			</nav>
-		</div>
-		<div ui-view></div>
+		<div data-ui-view=""></div>
 	</body>
 	<!-- Core-->
 	<script src="assets/libs/bower_components/jquery/dist/jquery.min.js"></script>
@@ -51,7 +37,9 @@
 	<script src="app/app.routes.js"></script>
 
 	<!-- Shared controllers -->
-
+	<script src="app/shared/common/common.controller.js"></script>
+	<script src="app/shared/header/header.controller.js"></script>
+	<script src="app/shared/footer/footer.controller.js"></script>
 
 	<!-- Components controllers -->
 	<script src="app/components/home/home.controller.js"></script>
