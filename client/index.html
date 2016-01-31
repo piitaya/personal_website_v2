@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html data-ng-app="app" ng-cloak>
+<html lang="en" data-ng-app="app">
 	<head>
 		<base href="/">
 		<meta charset="utf-8">
@@ -10,46 +10,51 @@
 		<!-- Google Font -->
 		<link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
 		<!-- Materialize CSS -->
-		<link href="assets/libs/bower_components/materialize/dist/css/materialize.min.css" rel="stylesheet"/>
+		<link href="assets/libs/bower_components/Materialize/dist/css/materialize.min.css" rel="stylesheet"/>
 		<!-- Other CSS -->
 
 		<!-- App CSS -->
 		<link href="assets/css/style.css" rel="stylesheet">
+
+		<!-- Core-->
+		<script src="assets/libs/bower_components/jquery/dist/jquery.min.js"></script>
+		<!-- Angular-->
+		<script src="assets/libs/bower_components/angular/angular.min.js"></script>
+		<script src="assets/libs/bower_components/angular-animate/angular-animate.min.js"></script>
+		<script src="assets/libs/bower_components/angular-resource/angular-resource.min.js"></script>
+		<script src="assets/libs/bower_components/angular-i18n/angular-locale_fr.js"></script>
+		<script src="assets/libs/bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
+		<!-- Materialize Modules-->
+		<script src="assets/libs/bower_components/Materialize/dist/js/materialize.min.js"></script>
+		<script src="assets/libs/bower_components/angular-materialize/src/angular-materialize.js"></script>
+
+		<!-- Other Modules-->
+
+		<!-- App config-->
+		<script src="app/app.modules.js"></script>
+		<script src="app/app.routes.js"></script>
+
+		<!-- Shared controllers -->
+		<script src="app/shared/common/common.controller.js"></script>
+		<script src="app/shared/header/header.controller.js"></script>
+		<script src="app/shared/footer/footer.controller.js"></script>
+
+		<!-- Components controllers -->
+		<script src="app/components/home/home.controller.js"></script>
+		
+		<script src="app/components/experience/experience-admin.controller.js"></script>
+		<!-- Directives-->
+
+		<!-- Filters-->
+
+		<!-- Services-->
+		<script src="app/components/home/home.service.js"></script>
+
+		<script src="app/components/experience/experience-admin.service.js"></script>
 	</head>
 	<body>
-		<div data-ui-view=""></div>
+		<div class="body" data-ui-view=""></div>
 	</body>
-	<!-- Core-->
-	<script src="assets/libs/bower_components/jquery/dist/jquery.min.js"></script>
-	<!-- Angular-->
-	<script src="assets/libs/bower_components/angular/angular.min.js"></script>
-	<script src="assets/libs/bower_components/angular-animate/angular-animate.min.js"></script>
-	<script src="assets/libs/bower_components/angular-resource/angular-resource.min.js"></script>
-	<script src="assets/libs/bower_components/angular-i18n/angular-locale_fr.js"></script>
-	<script src="assets/libs/bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
-	<!-- Materialize Modules-->
-	<script src="assets/libs/bower_components/materialize/dist/js/materialize.min.js"></script>
-	<script src="assets/libs/bower_components/angular-materialize/src/angular-materialize.js"></script>
-
-	<!-- Other Modules-->
-
-	<!-- App config-->
-	<script src="app/app.modules.js"></script>
-	<script src="app/app.routes.js"></script>
-
-	<!-- Shared controllers -->
-	<script src="app/shared/common/common.controller.js"></script>
-	<script src="app/shared/header/header.controller.js"></script>
-	<script src="app/shared/footer/footer.controller.js"></script>
-
-	<!-- Components controllers -->
-	<script src="app/components/home/home.controller.js"></script>
 	
-	<!-- Directives-->
-
-	<!-- Filters-->
-
-	<!-- Services-->
-	<script src="app/components/home/home.service.js"></script>
 </html>
 

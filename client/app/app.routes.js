@@ -32,7 +32,34 @@
                 templateUrl: 'app/components/home/home.html',
                 controller: 'HomeController',
                 controllerAs: 'vm'
-            });
+            })
+
+            .state ('admin', {
+                abstract: true,
+                views: {
+                    '': {
+                        templateUrl: 'app/shared/common/common.html',
+                        controller: 'CommonController as common',
+                    },
+                    'header@admin': {
+                        templateUrl: 'app/shared/header/header.html',
+                        controller: 'HeaderController as header',
+                    },
+                    'footer@admin': {
+                        templateUrl: 'app/shared/footer/footer.html',
+                        controller: 'FooterController as footer',
+                    }
+                }
+            })
+
+            // EXPERIENCES 
+
+            .state('admin.experiences', { // state for showing all movies
+                url: '/admin/experiences',
+                templateUrl: 'app/components/experience/experience-admin.html',
+                controller: 'ExperienceAdminController',
+                controllerAs: 'vm'
+            })
 
         $urlRouterProvider.otherwise( function($injector) {
             var $state = $injector.get("$state");

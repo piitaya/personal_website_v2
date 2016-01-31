@@ -11,7 +11,7 @@
     "angular-resource": "~1.4.8",
     "angular-animate": "~1.4.8",
     "angular-i18n": "~1.4.8",
-    "jquery": "~2.2.0",
+    "jquery": "~2.1.4",
     "angular-materialize": "~0.1.2",
     "Materialize": "materialize#~0.97.5"
   }

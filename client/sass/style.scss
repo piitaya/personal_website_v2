@@ -7,7 +7,7 @@ $small-screen: 600px !default;
 $medium-screen: 992px !default;
 $large-screen: 1200px !default;
 
-body {
+.body {
 	display: flex;
 	min-height: 100vh;
 	flex-direction: column;
@@ -15,6 +15,20 @@ body {
 
 main {
 	flex: 1 0 auto;
+}
+
+//Side nav fix hover effect
+.side-nav {
+	li {
+		a:hover {
+			background: none;
+		}
+	}
+}
+
+// Line height fix
+.card .card-content .card-title {
+    line-height: inherit;
 }
 
 $timeline-badge-size: 40px;
@@ -26,6 +40,7 @@ $timeline-badge-margin: 10px;
 		padding-top: 5px;
 		padding-bottom: 5px;
 		.timeline-content {
+			position: relative;
 			width: calc(50% - #{$timeline-badge-size/2 + 30px});
 		}
 

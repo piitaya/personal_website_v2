@@ -1,15 +1,28 @@
-<div style="background: rgb(240,240,240); padding-top: 50px; padding-bottom: 50px;">
+<div class="parallax-container">
+	<div parallax>
+		<img ng-src="http://krescruz.github.io/angular-materialize/images/parallax1.jpg">
+	</div>
+</div>
+
+<div style="background: rgb(240,240,240);">
 	<div class="container">
 		<div class="timeline">
-			<div class="timeline-event" ng-repeat="event in vm.events">
+			<div class="timeline-event" ng-repeat="event in vm.events track by $index">
 				
 				<div class="card timeline-content">
-					<div class="card-content">
+					<div class="card-image waves-effect waves-block waves-light">
+						<img class="activator" ng-src="http://lorempixel.com/image_output/nature-q-c-600-250-{{$index+1}}.jpg">
+					</div>
+    				<div class="card-content">
 						<span class="card-title activator grey-text text-darken-4">{{event.title}}<i class="material-icons right">more_vert</i></span>
 						<p>{{event.content}} <a href="#">This is a link</a></p>
 					</div>
+					<div class="card-reveal">
+						<span class="card-title grey-text text-darken-4">Card Title<i class="material-icons right">close</i></span>
+						<p>Here is some more information about this product that is only revealed once clicked on.</p>
+					</div>
 				</div>
-				<div class="timeline-badge teal white-text"><i class="material-icons">work</i></div>
+				<div class="timeline-badge blue white-text"><i class="material-icons">work</i></div>
 			</div>
 		</div>
 	</div>
@@ -17,11 +30,11 @@
 
 <div class="parallax-container">
 	<div parallax>
-		<img src="http://krescruz.github.io/angular-materialize/images/parallax1.jpg">
+		<img ng-src="http://krescruz.github.io/angular-materialize/images/parallax1.jpg">
 	</div>
 </div>
 
-<div style="padding-top: 50px; padding-bottom: 50px;">	
+<div>	
 	<div class="container">
 		<ul class="collapsible popout" data-collapsible="accordion" watch>
 			<li ng-repeat="single in vm.collapsibleElements">
@@ -31,5 +44,3 @@
 		</ul>
 	</div>
 </div>
-
-

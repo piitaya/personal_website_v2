@@ -1,5 +1,5 @@
 /*** Global ***/
-body {
+.body {
   display: flex;
   min-height: 100vh;
   flex-direction: column;
@@ -7,6 +7,14 @@ body {
 
 main {
   flex: 1 0 auto;
+}
+
+.side-nav li a:hover {
+  background: none;
+}
+
+.card .card-content .card-title {
+  line-height: inherit;
 }
 
 .timeline {
@@ -20,6 +28,7 @@ main {
 }
 
 .timeline .timeline-event .timeline-content {
+  position: relative;
   width: calc(50% - 50px);
 }
 

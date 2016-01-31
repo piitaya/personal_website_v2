@@ -28,11 +28,13 @@ app.use(methodOverride());
 
 var API = {};
 API.auth = require('./routes/api/auth');
-
+API.experiences = require('./routes/api/experiences')
 // Routes
 // Authentication
 app.post('/api/auth/signup', API.auth.localSignup);
 app.post('/api/auth/login', API.auth.localLogin);
+
+app.use('/api/admin', API.experiences);
 
 app.all('/*', function(req, res) {
 	res.sendFile(path.resolve(__dirname + '/../client/index.html'));
