@@ -6,63 +6,61 @@
 				<span>{{experience.title}}</span>
 				<span style="float: right;">{{experience.startDate | date: "shortDate"}} - {{experience.endDate | date: "shortDate"}}</span>
 			</div>
-			<div class="collapsible-body card" style="padding-left: 10px; padding-right: 10px;">
-				<form ng-submit="vm.submit(experience)">
-					<div class="card-content">
-						<div input-field>
-							<input type="text" ng-model="experience.title" length="150">
-							<label>Titre</label>
+			<div class="collapsible-body card">
+				<div class="card-content">
+					<div input-field>
+						<input type="text" ng-model="experience.title" length="150">
+						<label>Titre</label>
+					</div>
+					<div class="row">
+						<div class="checkbox-field col s12 m4">
+							<input type="checkbox" id="isCurrent{{$index}}" ng-model="experience.isCurrent" />
+     						<label for="isCurrent{{$index}}">Experience actuelle</label>
 						</div>
-						<div class="row">
-							<div class="checkbox-field col s12 m4">
-								<input type="checkbox" id="isCurrent{{$index}}" ng-model="experience.isCurrent" />
-	     						<label for="isCurrent{{$index}}">Experience actuelle</label>
-							</div>
-							<div class="col s6 m4">
-								<label for="startDate{{index}}">Date de début</label>
-								<input input-date
-								   type="text"
-								   id="startDate{{index}}"
-								   ng-model="experience.startDate"
-								   container="body"
-								   format="dd/mm/yyyy"
-								   />
-							</div>
-							<div class="col s6 m4">
-								<label for="startDate{{index}}">Date de fin</label>
-								<input input-date
-								   type="text"
-								   id="endDate{{index}}"
-								   ng-model="experience.endDate"
-								   container="body"
-								   format="dd/mm/yyyy"
-								   />
-							</div>
+						<div class="col s6 m4">
+							<label for="startDate{{index}}">Date de début</label>
+							<input input-date
+							   type="text"
+							   id="startDate{{index}}"
+							   ng-model="experience.startDate"
+							   container="body"
+							   format="dd/mm/yyyy"
+							   />
 						</div>
-						<div class="input-field col s12">
-							<textarea id="description{{$index}}" class="materialize-textarea" ng-model="experience.description"></textarea>
-							<label for="description{{$index}}">Description</label>
-						</div>
-						<div class="row">
-							<div input-field class="col m4 s12">
-								<input type="text" ng-model="experience.company">
-								<label>Entreprise/Ecole</label>
-							</div>
-							<div input-field class="col m4 s6">
-								<input type="text" ng-model="experience.city">
-								<label>Ville</label>
-							</div>
-							<div input-field class="col m4 s6">
-								<input type="text" ng-model="experience.country">
-								<label>Pays</label>
-							</div>
+						<div class="col s6 m4">
+							<label for="startDate{{index}}">Date de fin</label>
+							<input input-date
+							   type="text"
+							   id="endDate{{index}}"
+							   ng-model="experience.endDate"
+							   container="body"
+							   format="dd/mm/yyyy"
+							   />
 						</div>
 					</div>
-					<div class="card-action">
-						<a class="btn waves-effect waves-light" ng-click="vm.update(experience)">Sauvegarder</a>
-						<a class="btn waves-effect waves-light" ng-click="vm.delete(experience)">Supprimer</a>
+					<div class="input-field col s12">
+						<textarea id="description{{$index}}" class="materialize-textarea" ng-model="experience.description"></textarea>
+						<label for="description{{$index}}">Description</label>
 					</div>
-				</form>
+					<div class="row">
+						<div input-field class="col m4 s12">
+							<input type="text" ng-model="experience.company">
+							<label>Entreprise/Ecole</label>
+						</div>
+						<div input-field class="col m4 s6">
+							<input type="text" ng-model="experience.city">
+							<label>Ville</label>
+						</div>
+						<div input-field class="col m4 s6">
+							<input type="text" ng-model="experience.country">
+							<label>Pays</label>
+						</div>
+					</div>
+				</div>
+				<div class="card-action">
+					<a class="btn waves-effect waves-light" ng-click="vm.update(experience)">Sauvegarder</a>
+					<a class="btn waves-effect waves-light" ng-click="vm.delete(experience)">Supprimer</a>
+				</div>
 			</div>
 		</li>
 	</ul>

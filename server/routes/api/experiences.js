@@ -45,7 +45,7 @@ router.route('/experiences/:id')
 					res.status(200).json({ error: err });
 				}
 
-				res.status(200).json(experience);
+				res.status(200).json({ message: 'Successfully updated' });
 			});
 
 		});

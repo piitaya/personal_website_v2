@@ -2,11 +2,11 @@
 	'use strict';
 	angular
 		.module('app.services')
-		.factory('experienceAdminService', experienceAdminService);
+		.factory('experienceService', experienceService);
 
-	experienceAdminService.$inject = ['$resource'];
+	experienceService.$inject = ['$resource'];
 
-	function experienceAdminService($resource) {
+	function experienceService($resource) {
 		return $resource('/api/admin/experiences/:id', { id: '@_id' }, {
 			update: {
 				method: 'PUT' // this method issues a PUT request
