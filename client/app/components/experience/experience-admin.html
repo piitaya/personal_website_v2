@@ -7,7 +7,7 @@
 				<span style="float: right;">{{experience.startDate | date: "shortDate"}} - {{experience.endDate | date: "shortDate"}}</span>
 			</div>
 			<div class="collapsible-body card" style="padding-left: 10px; padding-right: 10px;">
-				<form>
+				<form ng-submit="vm.submit(experience)">
 					<div class="card-content">
 						<div input-field>
 							<input type="text" ng-model="experience.title" length="150">
@@ -59,8 +59,8 @@
 						</div>
 					</div>
 					<div class="card-action">
-					  <a href="#">Sauvegarder</a>
-					  <a href="#">Supprimer</a>
+						<a class="btn waves-effect waves-light" ng-click="vm.update(experience)">Sauvegarder</a>
+						<a class="btn waves-effect waves-light" ng-click="vm.delete(experience)">Supprimer</a>
 					</div>
 				</form>
 			</div>

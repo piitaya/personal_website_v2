@@ -23,7 +23,7 @@ router.route('/experiences')
 				res.status(200).json({ error: err });
 			}
 
-			res.status(200).json({message:'Experience Added'});
+			res.status(200).json(experience);
 		});
 	});
 
@@ -35,7 +35,7 @@ router.route('/experiences/:id')
 				res.status(200).json({ error: err });
 			}
 
-			for(prop in req.body){
+			for(var prop in req.body){
 				experience[prop] = req.body[prop];
 			}
 
@@ -45,7 +45,7 @@ router.route('/experiences/:id')
 					res.status(200).json({ error: err });
 				}
 
-				res.status(200).json({ message: 'Experience updated!' });
+				res.status(200).json(experience);
 			});
 
 		});
