@@ -41,6 +41,6 @@ app.all('/*', function(req, res) {
 });
 
 // listen (start app with node server.js) ======================================
-var port = 8181;
+var port = config.get("App.port");
 app.listen(port);
 console.log("App listening on port " + port);
