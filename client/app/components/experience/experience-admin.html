@@ -4,26 +4,63 @@
 			<div class="collapsible-header">
 				<i class="mdi-image-filter-drama"></i>
 				<span>{{experience.title}}</span>
+				<span style="float: right;">{{experience.startDate | date: "shortDate"}} - {{experience.endDate | date: "shortDate"}}</span>
 			</div>
-			<div class="collapsible-body" style="padding-left: 10px; padding-right: 10px;">
-				<p>{{experience.startDate | date: "short"}}</p>
+			<div class="collapsible-body card" style="padding-left: 10px; padding-right: 10px;">
 				<form>
-					<div input-field>
-						<input type="text" ng-model="experience.title" length="150">
-						<label>Titre</label>
+					<div class="card-content">
+						<div input-field>
+							<input type="text" ng-model="experience.title" length="150">
+							<label>Titre</label>
+						</div>
+						<div class="row">
+							<div class="checkbox-field col s12 m4">
+								<input type="checkbox" id="isCurrent{{$index}}" ng-model="experience.isCurrent" />
+	     						<label for="isCurrent{{$index}}">Experience actuelle</label>
+							</div>
+							<div class="col s6 m4">
+								<label for="startDate{{index}}">Date de début</label>
+								<input input-date
+								   type="text"
+								   id="startDate{{index}}"
+								   ng-model="experience.startDate"
+								   container="body"
+								   format="dd/mm/yyyy"
+								   />
+							</div>
+							<div class="col s6 m4">
+								<label for="startDate{{index}}">Date de fin</label>
+								<input input-date
+								   type="text"
+								   id="endDate{{index}}"
+								   ng-model="experience.endDate"
+								   container="body"
+								   format="dd/mm/yyyy"
+								   />
+							</div>
+						</div>
+						<div class="input-field col s12">
+							<textarea id="description{{$index}}" class="materialize-textarea" ng-model="experience.description"></textarea>
+							<label for="description{{$index}}">Description</label>
+						</div>
+						<div class="row">
+							<div input-field class="col m4 s12">
+								<input type="text" ng-model="experience.company">
+								<label>Entreprise/Ecole</label>
+							</div>
+							<div input-field class="col m4 s6">
+								<input type="text" ng-model="experience.city">
+								<label>Ville</label>
+							</div>
+							<div input-field class="col m4 s6">
+								<input type="text" ng-model="experience.country">
+								<label>Pays</label>
+							</div>
+						</div>
 					</div>
-					<label for="startDate{{index}}">Date de début</label>
-					<input input-date
-						   type="text"
-						   id="startDate{{index}}"
-						   ng-model="experience.startDate"
-						   container="body"
-						   format="dd/mm/yyyy"
-						   />
-					<div>
-						<select class="" ng-model="experience.company" material-select watch>
-						    <option ng-repeat="value in ['Company', 'test2']">{{value}}</option>
-						</select>
+					<div class="card-action">
+					  <a href="#">Sauvegarder</a>
+					  <a href="#">Supprimer</a>
 					</div>
 				</form>
 			</div>

@@ -31,6 +31,20 @@ main {
     line-height: inherit;
 }
 
+// Unify collapsible-body and card
+.collapsible-body.card {
+	margin: 0;
+	box-shadow: none;
+}
+
+.input-field label {
+    left: 0;
+}
+
+.checkbox-field {
+	margin-top: 32px;
+	margin-bottom: 27px;
+}
 $timeline-badge-size: 40px;
 $timeline-badge-margin: 10px;
 .timeline {
