@@ -14,15 +14,18 @@
                 views: {
                     '': {
                         templateUrl: 'app/shared/common/common.html',
-                        controller: 'CommonController as common',
+                        controller: 'CommonController',
+                        controllerAs: 'common'
                     },
                     'header@main': {
                         templateUrl: 'app/shared/header/header.html',
-                        controller: 'HeaderController as header',
+                        controller: 'HeaderController',
+                        controllerAs: 'header'
                     },
                     'footer@main': {
                         templateUrl: 'app/shared/footer/footer.html',
-                        controller: 'FooterController as footer',
+                        controller: 'FooterController',
+                        controllerAs: 'footer'
                     }
                 }
             })
@@ -38,21 +41,17 @@
                 abstract: true,
                 views: {
                     '': {
-                        templateUrl: 'app/shared/common/common.html',
-                        controller: 'CommonController as common',
+                        templateUrl: 'app/shared/admin/admin.html',
+                        controller: 'AdminController',
+                        controllerAs: 'admin'
                     },
                     'header@admin': {
                         templateUrl: 'app/shared/header/header.html',
-                        controller: 'HeaderController as header',
-                    },
-                    'footer@admin': {
-                        templateUrl: 'app/shared/footer/footer.html',
-                        controller: 'FooterController as footer',
+                        controller: 'HeaderController',
+                        controllerAs: 'header'
                     }
                 }
             })
-
-            // EXPERIENCES 
 
             .state('admin.experiences', { // state for showing all movies
                 url: '/admin/experiences',
@@ -60,6 +59,13 @@
                 controller: 'ExperienceAdminController',
                 controllerAs: 'vm'
             })
+
+            .state('admin.skills', { // state for showing all movies
+                url: '/admin/skills',
+                templateUrl: 'app/components/skill/skill-admin.html',
+                controller: 'SkillAdminController',
+                controllerAs: 'vm'
+            });
 
         $urlRouterProvider.otherwise( function($injector) {
             var $state = $injector.get("$state");

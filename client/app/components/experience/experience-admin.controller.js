@@ -22,23 +22,29 @@
 		}
 
 		function create() {
-			experienceService.save(vm.newExperience);
-			vm.experiences.push(vm.newExperience);
-			vm.newExperience = {};
-			console.log($("#new-experience-form"));
-			$("#new-experience-form").removeClass("active");
+			experienceService.save(vm.newExperience).$promise.then(function(experience) {
+				vm.experiences.push(experience);
+				vm.newExperience = {};
+				$("#new-experience-form").removeClass("active");
+				console.log("Experience created");
+			});
 		}
 
 		function update(experience) {
-			experienceService.get({id: experience._id }, function() {
-				experienceService.update({id: experience._id}, experience);
+			experienceService.get({id: experience._id }).$promise.then(function() {
+				return experienceService.update({id: experience._id}, experience).$promise;
+			}).then(function() {
+				console.log("Experience updated");
 			});
 		}
 
 		function remove(experience) {
-			experienceService.remove({id: experience._id});
-			var experienceIndex = vm.experiences.indexOf(experience);
-			vm.experiences.splice(experienceIndex, 1);
+			experienceService.remove({id: experience._id}).$promise.then(function(experience) {
+				var experienceIndex = vm.experiences.indexOf(experience);
+				vm.experiences.splice(experienceIndex, 1);
+				console.log("Experience removed");
+			});
+			
 		}
 	}
 })();

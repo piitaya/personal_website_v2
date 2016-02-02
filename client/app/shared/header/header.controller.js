@@ -8,5 +8,7 @@
 
 	function HeaderController() {
 		var vm = this;
+
+		$(".button-collapse").sideNav();
 	}
 })();
