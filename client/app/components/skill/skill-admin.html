@@ -16,6 +16,7 @@
 						<input type="number" ng-model="skill.power">
 						<label>Note</label>
 					</div>
+					<div slider ng-model="skill.power" start=1 end=10></div>
 				</div>
 				<div class="card-action">
 					<a class="btn-flat waves-effect waves-light" ng-click="vm.update(skill)">Sauvegarder</a>
@@ -38,6 +39,7 @@
 						<input type="number" ng-model="vm.newSkill.power">
 						<label>Note</label>
 					</div>
+					<div slider ng-model="vm.newSkill.power" start=1 end=100></div>
 				</div>
 				<div class="card-action">
 					<a ng-click="vm.create()" class="btn-flat waves-effect waves-light">Créer</a>

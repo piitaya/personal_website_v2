@@ -13,6 +13,12 @@
     "angular-i18n": "~1.4.8",
     "jquery": "~2.1.4",
     "angular-materialize": "~0.1.2",
-    "Materialize": "materialize#~0.97.5"
+    "Materialize": "materialize#~0.97.5",
+    "angular-nouislider": "~0.3.1",
+    "nouislider": "~8.2.1"
+  },
+  "resolutions": {
+    "angular": "1.4.9",
+    "nouislider": "~6.2.0"
   }
 }
