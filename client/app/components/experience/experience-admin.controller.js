@@ -21,22 +21,24 @@
 			vm.experiences = experienceService.query(); // returns all the pokemons
 		}
 
-	    function create() {
-	        experienceService.save(vm.newExperience);
-	        vm.experiences.push(vm.newExperience);
-	        vm.newExperience = {}; // clear new pokemon object
-	    }
+		function create() {
+			experienceService.save(vm.newExperience);
+			vm.experiences.push(vm.newExperience);
+			vm.newExperience = {};
+			console.log($("#new-experience-form"));
+			$("#new-experience-form").removeClass("active");
+		}
 
-	    function update(experience) {
-	        experienceService.get({id: experience._id }, function() {
-	            experienceService.update({id: experience._id}, experience);
-	        });
-	    }
+		function update(experience) {
+			experienceService.get({id: experience._id }, function() {
+				experienceService.update({id: experience._id}, experience);
+			});
+		}
 
-	    function remove(experience) {
-	        experienceService.remove({id: experience._id});
-	        var experienceIndex = vm.experiences.indexOf(experience);
-	        vm.experiences.splice(experienceIndex, 1);
-	    }
+		function remove(experience) {
+			experienceService.remove({id: experience._id});
+			var experienceIndex = vm.experiences.indexOf(experience);
+			vm.experiences.splice(experienceIndex, 1);
+		}
 	}
 })();

@@ -3,7 +3,7 @@
 	<ul class="collapsible popout" data-collapsible="accordion" watch>
 		<li ng-repeat="experience in vm.experiences">
 			<div class="collapsible-header">
-				<i class="mdi-image-filter-drama"></i>
+				<i class="material-icons">work</i>
 				<span>{{experience.title}}</span>
 				<span style="float: right;">{{experience.startDate | date: "shortDate"}} - {{experience.endDate | date: "shortDate"}}</span>
 			</div>
@@ -27,7 +27,7 @@
 							   container="body"
 							   />
 						</div>
-						<div class="col s6 m4">
+						<div class="col s6 m4" ng-if="!experience.isCurrent">
 							<label for="startDate{{index}}">Date de fin</label>
 							<input input-date
 							   type="text"
@@ -62,65 +62,64 @@
 				</div>
 			</div>
 		</li>
+		<li>
+			<div id="new-experience-form" class="collapsible-header">
+				<i class="material-icons">add</i>
+				<span>Ajouter une nouvelle experience</span>
+			</div>
+			<div class="collapsible-body card">
+				<div class="card-content">
+					<div input-field>
+						<input type="text" ng-model="vm.newExperience.title">
+						<label>Titre</label>
+					</div>
+					<div class="row">
+						<div class="checkbox-field col s12 m4">
+							<input type="checkbox" id="isCurrentNew" ng-model="vm.newExperience.isCurrent" />
+								<label for="isCurrentNew">Experience actuelle</label>
+						</div>
+						<div class="col s6 m4">
+							<label for="startDateNew">Date de début</label>
+							<input input-date
+							   type="text"
+							   id="startDateNew"
+							   ng-model="vm.newExperience.startDate"
+							   container="body"
+							   />
+						</div>
+						<div class="col s6 m4" ng-if="!vm.newExperience.isCurrent">
+							<label for="startDateNew">Date de fin</label>
+							<input input-date
+							   type="text"
+							   id="endDateNew"
+							   ng-model="vm.newExperience.endDate"
+							   container="body"
+							   />
+						</div>
+					</div>
+					<div class="input-field col s12">
+						<textarea id="descriptionNew" class="materialize-textarea" ng-model="vm.newExperience.description"></textarea>
+						<label for="descriptionNew">Description</label>
+					</div>
+					<div class="row">
+						<div input-field class="col m4 s12">
+							<input type="text" ng-model="vm.newExperience.company">
+							<label>Entreprise/Ecole</label>
+						</div>
+						<div input-field class="col m4 s6">
+							<input type="text" ng-model="vm.newExperience.city">
+							<label>Ville</label>
+						</div>
+						<div input-field class="col m4 s6">
+							<input type="text" ng-model="vm.newExperience.country">
+							<label>Pays</label>
+						</div>
+					</div>
+				</div>
+				<div class="card-action">
+					<button ng-click="vm.create()" class="modal-action modal-close waves-effect waves-green btn-flat">Créer</button>
+				</div>
+			</div>
+		</li>
 	</ul>
-</div>
-
-<div class="fixed-action-btn" style="bottom: 45px; right: 24px;">
-	<a class="btn-floating btn-large red" href='#demoModal' modal>
-		<i class="large material-icons">add</i>
-	</a>
-</div>
-
-<div id="demoModal" class="modal">
-    <div class="modal-content">
-    	<div input-field>
-			<input type="text" ng-model="vm.newExperience.title">
-			<label>Titre</label>
-		</div>
-		<div class="row">
-			<div class="checkbox-field col s12 m4">
-				<input type="checkbox" id="isCurrentNew" ng-model="vm.newExperience.isCurrent" />
-					<label for="isCurrentNew">Experience actuelle</label>
-			</div>
-			<div class="col s6 m4">
-				<label for="startDateNew">Date de début</label>
-				<input input-date
-				   type="text"
-				   id="startDateNew"
-				   ng-model="vm.newExperience.startDate"
-				   container="body"
-				   />
-			</div>
-			<div class="col s6 m4">
-				<label for="startDateNew">Date de fin</label>
-				<input input-date
-				   type="text"
-				   id="endDateNew"
-				   ng-model="vm.newExperience.endDate"
-				   container="body"
-				   />
-			</div>
-		</div>
-		<div class="input-field col s12">
-			<textarea id="descriptionNew" class="materialize-textarea" ng-model="vm.newExperience.description"></textarea>
-			<label for="descriptionNew">Description</label>
-		</div>
-		<div class="row">
-			<div input-field class="col m4 s12">
-				<input type="text" ng-model="vm.newExperience.company">
-				<label>Entreprise/Ecole</label>
-			</div>
-			<div input-field class="col m4 s6">
-				<input type="text" ng-model="vm.newExperience.city">
-				<label>Ville</label>
-			</div>
-			<div input-field class="col m4 s6">
-				<input type="text" ng-model="vm.newExperience.country">
-				<label>Pays</label>
-			</div>
-		</div>
-	</div>
-    <div class="modal-footer">
-        <button ng-click="vm.create()" class="modal-action modal-close waves-effect waves-green btn-flat">Créer</button>
-    </div>
 </div>
