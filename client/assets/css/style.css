@@ -127,6 +127,10 @@ main {
   box-shadow: none;
 }
 
+.noUi-target.noUi-connect {
+  box-shadow: none;
+}
+
 .slider-red.noUi-connect, .slider-red.noUi-horizontal .noUi-handle, .slider-red.noUi-target .range-label {
   background: #e51c23;
 }
