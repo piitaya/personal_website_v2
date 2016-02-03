@@ -126,3 +126,15 @@ main {
 .noUi-background {
   box-shadow: none;
 }
+
+.slider-red.noUi-connect, .slider-red.noUi-horizontal .noUi-handle, .slider-red.noUi-target .range-label {
+  background: #e51c23;
+}
+
+.slider-orange.noUi-connect, .slider-orange.noUi-horizontal .noUi-handle, .slider-orange.noUi-target .range-label {
+  background: #ff9800;
+}
+
+.slider-green.noUi-connect, .slider-green.noUi-horizontal .noUi-handle, .slider-green.noUi-target .range-label {
+  background: #4CAF50;
+}

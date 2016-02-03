@@ -14,6 +14,7 @@
 		vm.create = create;
 		vm.update = update;
 		vm.remove = remove;
+		vm.getSliderColor = getSliderColor;
 
 		activate();
 
@@ -45,6 +46,21 @@
 				console.log("Skill removed");
 			});
 			
+		}
+
+		function getSliderColor(power) {
+			if (power <= 20) {
+				return "slider-red";
+			}
+			else if (power <= 50) {
+				return "slider-orange";
+			}
+			else if (power <= 100) {
+				return "slider-green";
+			}
+			else {
+				return "slider-red";
+			}
 		}
 	}
 })();

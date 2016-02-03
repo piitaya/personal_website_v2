@@ -156,3 +156,19 @@ $timeline-badge-margin: 10px;
 .noUi-background {
     box-shadow: none;
 }
+
+.slider-red {
+	&.noUi-connect, &.noUi-horizontal .noUi-handle, &.noUi-target .range-label {
+		background: #e51c23;
+	}
+}
+.slider-orange {
+	&.noUi-connect, &.noUi-horizontal .noUi-handle, &.noUi-target .range-label {
+		background: #ff9800;
+	}
+}
+.slider-green {
+	&.noUi-connect, &.noUi-horizontal .noUi-handle, &.noUi-target .range-label {
+		background: #4CAF50;
+	}
+}
