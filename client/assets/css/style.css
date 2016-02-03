@@ -122,3 +122,7 @@ main {
     left: 0;
   }
 }
+
+.noUi-background {
+  box-shadow: none;
+}
