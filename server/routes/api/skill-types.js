@@ -1,46 +1,46 @@
-var Skill = require(__base + "models/skill");
+var SkillType = require(__base + "models/skill-type");
 var express = require('express');
 
 //configure routes
 
 var router = express.Router();
 
-router.route('/skills')
+router.route('/skill-types')
 	.get(function(req,res){
-		Skill.find().exec(function(err,skills){
+		SkillType.find(function(err,skillTypes){
 			if (err) {
 				res.status(200).json({ error: err });
 			}
 				
-			res.status(200).json(skills);
+			res.status(200).json(skillTypes);
 		});
 	})
 
 	.post(function(req,res){
-		var skill = new Skill(req.body);
-		skill.save(function(err){
+		var skillType = new SkillType(req.body);
+		skillType.save(function(err){
 			if (err) {
 				res.status(200).json({ error: err });
 			}
 
-			res.status(200).json(skill);
+			res.status(200).json(skillType);
 		});
 	});
 
-router.route('/skills/:id')
+router.route('/skill-types/:id')
 	.put(function(req,res){
-		Skill.findOne({_id:req.params.id},function(err,skill){
+		SkillType.findOne({_id:req.params.id},function(err,skillType){
 
 			if (err) {
 				res.status(200).json({ error: err });
 			}
 
 			for(var prop in req.body){
-				skill[prop] = req.body[prop];
+				skillType[prop] = req.body[prop];
 			}
 
-			// save the Skill
-			skill.save(function(err) {
+			// save the Skill Type
+			skillType.save(function(err) {
 				if (err) {
 					res.status(200).json({ error: err });
 				}
@@ -52,19 +52,19 @@ router.route('/skills/:id')
 	})
 
 	.get(function(req,res){
-		Skill.findOne({_id:req.params.id}).exec(function(err, skill) {
+		SkillType.findOne({_id:req.params.id},function(err, skillType) {
 			if (err) {
 				res.status(200).json({ error: err });
 			}
 
-			res.status(200).json(skill);
+			res.status(200).json(skillType);
 		});
 	})
 
 	.delete(function(req,res){
-		Skill.remove({
+		SkillType.remove({
 			_id: req.params.id
-		}, function(err, skill) {
+		}, function(err, skillType) {
 			if (err) {
 				res.status(200).json({ error: err });
 			}

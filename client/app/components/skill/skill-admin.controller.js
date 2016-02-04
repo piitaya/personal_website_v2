@@ -4,12 +4,13 @@
 		.module('app.controllers')
 		.controller('SkillAdminController', SkillAdminController);
 
-	SkillAdminController.$inject = ['skillService'];
+	SkillAdminController.$inject = ['skillService', 'skillTypeService'];
 
-	function SkillAdminController(skillService) {
+	function SkillAdminController(skillService, skillTypeService) {
 		var vm = this;
 		
 		vm.skills = [];
+		vm.types = [];
 		vm.newSkill = {};
 		vm.create = create;
 		vm.update = update;
@@ -19,7 +20,12 @@
 		activate();
 
 		function activate() {
-			vm.skills = skillService.query(); // returns all the pokemons
+			skillService.query().$promise.then(function(skills) {
+				vm.skills = skills;
+			});
+			skillTypeService.query().$promise.then(function(types) {
+				vm.types = types;
+			});
 		}
 
 		function create() {

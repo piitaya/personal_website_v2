@@ -16,25 +16,33 @@
 					<div class="row">
 						<div class="checkbox-field col s12 m4">
 							<input type="checkbox" id="isCurrent{{$index}}" ng-model="experience.isCurrent" />
-     						<label for="isCurrent{{$index}}">Experience actuelle</label>
+							<label for="isCurrent{{$index}}">Experience actuelle</label>
 						</div>
 						<div class="col s6 m4">
-							<label for="startDate{{index}}">Date de début</label>
-							<input input-date
-							   type="text"
-							   id="startDate{{index}}"
-							   ng-model="experience.startDate"
-							   container="body"
-							   />
+							<div class="input-field">
+								<label for="startDate{{index}}">Date de début</label>
+								<input input-date
+									type="text"
+									id="startDate{{index}}"
+									ng-model="experience.startDate"
+									container="body"
+									/>
+							</div>
 						</div>
-						<div class="col s6 m4" ng-if="!experience.isCurrent">
-							<label for="startDate{{index}}">Date de fin</label>
-							<input input-date
-							   type="text"
-							   id="endDate{{index}}"
-							   ng-model="experience.endDate"
-							   container="body"
-							   />
+						<div class="col s6 m4">
+							<div class="input-field" ng-show="!experience.isCurrent">
+								<label for="startDate{{index}}">Date de fin</label>
+								<input input-date
+									type="text"
+									id="endDate{{index}}"
+									ng-model="experience.endDate"
+									container="body"
+									/>
+							</div>
+							<div input-field ng-show="experience.isCurrent">
+								<input type="text" value="Aujourd'hui" readonly>
+								<label>Date de fin</label>
+							</div>
 						</div>
 					</div>
 					<div class="input-field col s12">
@@ -76,25 +84,33 @@
 					<div class="row">
 						<div class="checkbox-field col s12 m4">
 							<input type="checkbox" id="isCurrentNew" ng-model="vm.newExperience.isCurrent" />
-								<label for="isCurrentNew">Experience actuelle</label>
+							<label for="isCurrentNew">Experience actuelle</label>
 						</div>
 						<div class="col s6 m4">
-							<label for="startDateNew">Date de début</label>
-							<input input-date
-							   type="text"
-							   id="startDateNew"
-							   ng-model="vm.newExperience.startDate"
-							   container="body"
-							   />
+							<div class="input-field">
+								<label for="startDateNew">Date de début</label>
+								<input input-date
+									type="text"
+									id="startDateNew"
+									ng-model="vm.newExperience.startDate"
+									container="body"
+									/>
+							</div>
 						</div>
-						<div class="col s6 m4" ng-if="!vm.newExperience.isCurrent">
-							<label for="startDateNew">Date de fin</label>
-							<input input-date
-							   type="text"
-							   id="endDateNew"
-							   ng-model="vm.newExperience.endDate"
-							   container="body"
-							   />
+						<div class="col s6 m4">
+							<div class="input-field" ng-show="!vm.newExperience.isCurrent">
+								<label for="startDateNew">Date de fin</label>
+								<input input-date
+									type="text"
+									id="endDateNew"
+									ng-model="vm.newExperience.endDate"
+									container="body"
+									/>
+							</div>
+							<div input-field ng-show="vm.newExperience.isCurrent">
+								<input type="text" value="Aujourd'hui" readonly>
+								<label>Date de fin</label>
+							</div>
 						</div>
 					</div>
 					<div class="input-field col s12">

@@ -53,17 +53,24 @@
                 }
             })
 
-            .state('admin.experiences', { // state for showing all movies
+            .state('admin.experiences', { // state for showing all experiences
                 url: '/admin/experiences',
                 templateUrl: 'app/components/experience/experience-admin.html',
                 controller: 'ExperienceAdminController',
                 controllerAs: 'vm'
             })
 
-            .state('admin.skills', { // state for showing all movies
+            .state('admin.skills', { // state for showing all skills
                 url: '/admin/skills',
                 templateUrl: 'app/components/skill/skill-admin.html',
                 controller: 'SkillAdminController',
+                controllerAs: 'vm'
+            })
+
+             .state('admin.skill-types', { // state for showing all skill types
+                url: '/admin/skill-types',
+                templateUrl: 'app/components/skill-type/skill-type-admin.html',
+                controller: 'SkillTypeAdminController',
                 controllerAs: 'vm'
             });
 

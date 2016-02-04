@@ -30,6 +30,7 @@ var API = {};
 API.auth = require('./routes/api/auth');
 API.experiences = require('./routes/api/experiences');
 API.skills = require('./routes/api/skills');
+API.skillTypes = require('./routes/api/skill-types');
 
 // Routes
 // Authentication
@@ -38,6 +39,7 @@ app.post('/api/auth/login', API.auth.localLogin);
 
 app.use('/api/admin', API.experiences);
 app.use('/api/admin', API.skills);
+app.use('/api/admin', API.skillTypes);
 
 app.all('/*', function(req, res) {
 	res.sendFile(path.resolve(__dirname + '/../client/index.html'));
