@@ -46,7 +46,7 @@
 		}
 
 		function remove(skill) {
-			skillService.remove({id: skill._id}).$promise.then(function(skill) {
+			skillService.remove({id: skill._id}).$promise.then(function() {
 				var skillIndex = vm.skills.indexOf(skill);
 				vm.skills.splice(skillIndex, 1);
 				console.log("Skill removed");

@@ -39,7 +39,7 @@
 		}
 
 		function remove(experience) {
-			experienceService.remove({id: experience._id}).$promise.then(function(experience) {
+			experienceService.remove({id: experience._id}).$promise.then(function() {
 				var experienceIndex = vm.experiences.indexOf(experience);
 				vm.experiences.splice(experienceIndex, 1);
 				console.log("Experience removed");

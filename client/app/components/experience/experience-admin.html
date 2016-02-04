@@ -5,7 +5,11 @@
 			<div class="collapsible-header">
 				<i class="material-icons">work</i>
 				<span>{{experience.title}}</span>
-				<span style="float: right;">{{experience.startDate | date: "shortDate"}} - {{experience.endDate | date: "shortDate"}}</span>
+				<span style="float: right;">
+					{{experience.startDate | date: "shortDate"}} - 
+					<span ng-if="!experience.isCurrent">{{experience.endDate | date: "shortDate"}}</span>
+					<span ng-if="experience.isCurrent">Aujourd'hui</span>
+				</span>
 			</div>
 			<div class="collapsible-body card">
 				<div class="card-content">
@@ -26,6 +30,7 @@
 									id="startDate{{index}}"
 									ng-model="experience.startDate"
 									container="body"
+									format="dd/mm/yyyy"
 									/>
 							</div>
 						</div>
@@ -37,6 +42,7 @@
 									id="endDate{{index}}"
 									ng-model="experience.endDate"
 									container="body"
+									format="dd/mm/yyyy"
 									/>
 							</div>
 							<div input-field ng-show="experience.isCurrent">
