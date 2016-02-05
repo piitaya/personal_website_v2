@@ -6,9 +6,11 @@
 				<i class="material-icons">work</i>
 				<span>{{experience.title}}</span>
 				<span style="float: right;">
-					{{experience.startDate | date: "shortDate"}} - 
+					<span>{{experience.startDate | date: "shortDate"}}</span>
+					<span> - </span> 
 					<span ng-if="!experience.isCurrent">{{experience.endDate | date: "shortDate"}}</span>
 					<span ng-if="experience.isCurrent">Aujourd'hui</span>
+					<span>{{vm.duration(experience.startDate, experience.endDate, experience.isCurrent)}}</span>
 				</span>
 			</div>
 			<div class="collapsible-body card">
@@ -100,17 +102,19 @@
 									id="startDateNew"
 									ng-model="vm.newExperience.startDate"
 									container="body"
+									format="dd/mm/yyyy"
 									/>
 							</div>
 						</div>
 						<div class="col s6 m4">
 							<div class="input-field" ng-show="!vm.newExperience.isCurrent">
-								<label for="startDateNew">Date de fin</label>
+								<label for="endDateNew">Date de fin</label>
 								<input input-date
 									type="text"
 									id="endDateNew"
 									ng-model="vm.newExperience.endDate"
 									container="body"
+									format="dd/mm/yyyy"
 									/>
 							</div>
 							<div input-field ng-show="vm.newExperience.isCurrent">
