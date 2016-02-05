@@ -2,7 +2,7 @@
 	<ul class="collapsible popout" data-collapsible="accordion" watch>
 		<li ng-repeat="skillType in vm.skillTypes">
 			<div class="collapsible-header">
-				<i class="material-icons">work</i>
+				<i class="material-icons">{{skillType.icon}}</i>
 				<span>{{skillType.name}}</span>
 			</div>
 			<div class="collapsible-body card">

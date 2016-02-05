@@ -16,6 +16,8 @@
 		vm.update = update;
 		vm.remove = remove;
 		vm.getSliderColor = getSliderColor;
+		vm.icons = {};
+		vm.getIcon = getIcon;
 
 		activate();
 
@@ -25,6 +27,10 @@
 			});
 			skillTypeService.query().$promise.then(function(types) {
 				vm.types = types;
+
+				types.forEach(function(type) {
+					vm.icons[type._id] = {icon: type.icon};
+				});
 			});
 		}
 
@@ -67,6 +73,11 @@
 			else {
 				return "slider-red";
 			}
+		}
+
+		function getIcon(typeId) {
+			var icon = vm.icons[typeId];
+			return icon ? icon.icon : "";
 		}
 	}
 })();
