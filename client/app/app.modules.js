@@ -7,6 +7,7 @@
 			'ui.router',
 			'ui.materialize',
 			'nouislider',
+			'duScroll',
 			'app.controllers',
 			'app.filters',
 			'app.services',

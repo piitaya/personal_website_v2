@@ -4,6 +4,11 @@
 		.module('app')
 		.config(config);
 
+    angular
+        .module('app')
+        .value('duScrollDuration', 1000).
+        value('duScrollOffset', 64);
+        
 	function config($stateProvider, $urlRouterProvider, $locationProvider) {
 		$locationProvider.html5Mode(true);
 
