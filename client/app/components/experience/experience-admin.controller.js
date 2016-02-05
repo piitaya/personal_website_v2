@@ -4,9 +4,9 @@
 		.module('app.controllers')
 		.controller('ExperienceAdminController', ExperienceAdminController);
 
-	ExperienceAdminController.$inject = ['experienceService'];
+	ExperienceAdminController.$inject = ['experienceService', 'dateService'];
 
-	function ExperienceAdminController(experienceService) {
+	function ExperienceAdminController(experienceService, dateService) {
 		var vm = this;
 		
 		vm.experiences = [];
@@ -23,8 +23,8 @@
 		}
 
 		function create() {
-			vm.newExperience.startDate = getDate(vm.newExperience.startDate);
-			vm.newExperience.endDate = getDate(vm.newExperience.endDate);
+			vm.newExperience.startDate = dateService.getDate(vm.newExperience.startDate);
+			vm.newExperience.endDate = dateService.getDate(vm.newExperience.endDate);
 			experienceService.save(vm.newExperience).$promise.then(function(experience) {
 				vm.experiences.push(experience);
 				vm.newExperience = {};
@@ -34,8 +34,8 @@
 		}
 
 		function update(experience) {
-			experience.startDate = getDate(experience.startDate);
-			experience.endDate = getDate(experience.endDate);
+			experience.startDate = dateService.getDate(experience.startDate);
+			experience.endDate = dateService.getDate(experience.endDate);
 			experienceService.get({id: experience._id }).$promise.then(function() {
 				return experienceService.update({id: experience._id}, experience).$promise;
 			}).then(function() {
@@ -54,35 +54,10 @@
 
 		function duration(startDate, endDate, isCurrent) {
 
-			var start = getDate(startDate);
-			var end = isCurrent ? new Date() : getDate(endDate);
+			var start = dateService.getDate(startDate);
+			var end = isCurrent ? new Date() : dateService.getDate(endDate);
 			
-			return "(" + getDuration(start, end) + ")";
-		}
-
-		function getDuration(start, end) {
-			if (start && end) {
-				start = moment(start);
-				end = moment(end);
-				var months = end.diff(start, 'months') + 1;
-				return moment.duration(months, 'months').humanize();
-			}
-			else {
-				return "";
-			}
-		}
-
-		function getDate(date) {
-			if (!date || date === "") {
-				return undefined;
-			}
-			else if (date.indexOf("/") > -1) {
-				return moment(date, 'DD/MM/YYYY').toDate();
-			}
-			else {
-				return moment(date).toDate();
-			}
-			
+			return "(" + dateService.getDuration(start, end) + ")";
 		}
 	}
 })();
