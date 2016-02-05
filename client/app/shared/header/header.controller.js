@@ -8,7 +8,17 @@
 
 	function HeaderController() {
 		var vm = this;
+		vm.closeSideNav = closeSideNav;
 
-		$(".button-collapse").sideNav();
+		activate();
+
+		function activate() {
+			$(".button-collapse").sideNav();
+		}
+		
+		function closeSideNav() {
+			console.log("click");
+			$('.button-collapse').sideNav('hide');
+		}
 	}
 })();

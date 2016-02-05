@@ -6,8 +6,9 @@
 
     angular
         .module('app')
-        .value('duScrollDuration', 1000).
-        value('duScrollOffset', 64);
+        .value('duScrollDuration', 1000)
+        .value('duScrollOffset', 64)
+        .value('duScrollBottomSpy', true);
         
 	function config($stateProvider, $urlRouterProvider, $locationProvider) {
 		$locationProvider.html5Mode(true);

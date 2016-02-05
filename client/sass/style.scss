@@ -176,3 +176,12 @@ $timeline-badge-margin: 10px;
 		background: #4CAF50;
 	}
 }
+
+nav {
+    height: 64px;
+    line-height: 64px;
+    .button-collapse i {
+    	height: 64px;
+    	line-height: 64px;
+    }
+}

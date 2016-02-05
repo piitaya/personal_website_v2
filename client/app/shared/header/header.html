@@ -1,5 +1,5 @@
 <div class="navbar-fixed">
-	<nav>
+	<nav class="blue">
 		<div class="container">
 			<div class="nav-wrapper">
 				<a href="#" class="brand-logo">Logo</a>
@@ -11,10 +11,10 @@
 					<li du-scrollspy="elements"><a du-smooth-scroll="elements">Elements</a></li>
 				</ul>
 				<ul class="side-nav" id="mobile-demo">
-			        <li du-scrollspy="home"><a du-smooth-scroll="home">Home</a></li>
-					<li du-scrollspy="experience"><a du-smooth-scroll="experience">Experience</a></li>
-					<li du-scrollspy="parallax"><a du-smooth-scroll="parallax">Parallax</a></li>
-					<li du-scrollspy="elements"><a du-smooth-scroll="elements">Elements</a></li>
+			        <li du-scrollspy="home"><a du-smooth-scroll="home" ng-click="header.closeSideNav()">Home</a></li>
+					<li du-scrollspy="experience"><a du-smooth-scroll="experience" ng-click="header.closeSideNav()">Experience</a></li>
+					<li du-scrollspy="parallax"><a du-smooth-scroll="parallax" ng-click="header.closeSideNav()">Parallax</a></li>
+					<li du-scrollspy="elements"><a du-smooth-scroll="elements" ng-click="header.closeSideNav()">Elements</a></li>
 			    </ul>
 			</div>
 		</div>

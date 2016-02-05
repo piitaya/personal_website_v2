@@ -142,3 +142,13 @@ main {
 .slider-green.noUi-connect, .slider-green.noUi-horizontal .noUi-handle, .slider-green.noUi-target .range-label {
   background: #4CAF50;
 }
+
+nav {
+  height: 64px;
+  line-height: 64px;
+}
+
+nav .button-collapse i {
+  height: 64px;
+  line-height: 64px;
+}
