@@ -53,11 +53,15 @@
 		}
 
 		function duration(startDate, endDate, isCurrent) {
-
 			var start = dateService.getDate(startDate);
 			var end = isCurrent ? new Date() : dateService.getDate(endDate);
 			
-			return "(" + dateService.getDuration(start, end) + ")";
+			if (start && end) {
+				return "(" + dateService.getDuration(start, end) + ")";
+			}
+			else {
+				return "";
+			}
 		}
 	}
 })();
