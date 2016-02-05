@@ -15,6 +15,6 @@
     "angular-materialize": "~0.1.2",
     "materialize": "materialize#~0.97.5",
     "moment": "~2.11.2",
-    "angular-scroll": "1.0.0"
+    "angular-scroll": "https://github.com/piitaya/angular-scroll.git#master"
   }
 }
