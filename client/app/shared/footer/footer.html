@@ -1,16 +1,23 @@
 <div class="container">
   <div class="row">
     <div class="col l6 s12">
-      <h5 class="white-text">Footer Content</h5>
-      <p class="grey-text text-lighten-4">You can use rows and columns here to organize your footer content.</p>
-      <div input-field>
-        <input id="first_name" type="text" class="validate">
-        <label for="first_name">First Name</label>
-      </div>
-      <div input-field>
-        <input id="last_name" type="text" class="validate">
-        <label for="last_name">Last Name</label>
-      </div>
+      <h5 class="white-text">Contact</h5>
+      <p class="grey-text text-lighten-4">Vous pouvez me contacter par mail via le formulaire de contact.</p>
+      <form ng-submit="footer.submit()">
+        <div input-field>
+          <input id="email" type="email" ng-model="footer.contact.email" class="validate" required>
+          <label for="email">Email</label>
+        </div>
+        <div input-field>
+          <input id="subject" type="text" ng-model="footer.contact.subject" class="validate" required>
+          <label for="subject">Objet</label>
+        </div>
+        <div class="input-field">
+          <textarea id="message" class="materialize-textarea" ng-model="footer.contact.message" class="validate" required></textarea>
+          <label for="message">Message</label>
+        </div>
+        <input class="btn waves-effect waves-light blue lighten-2" type="submit" value="Envoyer">
+      </form>
     </div>
     <div class="col l4 offset-l2 s12">
       <h5 class="white-text">Links</h5>
@@ -25,7 +32,7 @@
 </div>
 <div class="footer-copyright">
   <div class="container">
-  © 2014 Copyright Text
+  © 2016 Copyright Text
   <a class="grey-text text-lighten-4 right" href="#!">More Links</a>
   </div>
 </div>

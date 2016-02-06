@@ -153,38 +153,30 @@ nav .button-collapse i {
   line-height: 64px;
 }
 
-.page-footer {
-  /* label focus color */
-  /* label underline focus color */
-  /* valid color */
-  /* invalid color */
-  /* icon prefix focus color */
-}
-
 .page-footer .input-field label {
   color: white;
 }
 
-.page-footer .input-field input[type=text] {
+.page-footer .input-field input[type=text], .page-footer .input-field textarea.materialize-textarea, .page-footer .input-field input[type=email] {
   color: white;
   border-bottom: 1px solid white;
 }
 
-.page-footer .input-field input[type=text]:focus + label {
+.page-footer .input-field input[type=text]:focus + label, .page-footer .input-field textarea.materialize-textarea:focus + label, .page-footer .input-field input[type=email]:focus + label {
   color: white;
 }
 
-.page-footer .input-field input[type=text]:focus {
+.page-footer .input-field input[type=text]:focus, .page-footer .input-field textarea.materialize-textarea:focus, .page-footer .input-field input[type=email]:focus {
+  order-bottom: 1px solid white;
+  box-shadow: 0 1px 0 0 white;
+}
+
+.page-footer .input-field input[type=text].valid, .page-footer .input-field textarea.materialize-textarea.valid, .page-footer .input-field input[type=email].valid {
   border-bottom: 1px solid white;
   box-shadow: 0 1px 0 0 white;
 }
 
-.page-footer .input-field input[type=text].valid {
-  border-bottom: 1px solid white;
-  box-shadow: 0 1px 0 0 white;
-}
-
-.page-footer .input-field input[type=text].invalid {
+.page-footer .input-field input[type=text].invalid, .page-footer .input-field textarea.materialize-textarea.invalid, .page-footer .input-field input[type=email].invalid {
   border-bottom: 1px solid white;
   box-shadow: 0 1px 0 0 white;
 }
