@@ -152,3 +152,43 @@ nav .button-collapse i {
   height: 64px;
   line-height: 64px;
 }
+
+.page-footer {
+  /* label focus color */
+  /* label underline focus color */
+  /* valid color */
+  /* invalid color */
+  /* icon prefix focus color */
+}
+
+.page-footer .input-field label {
+  color: white;
+}
+
+.page-footer .input-field input[type=text] {
+  color: white;
+  border-bottom: 1px solid white;
+}
+
+.page-footer .input-field input[type=text]:focus + label {
+  color: white;
+}
+
+.page-footer .input-field input[type=text]:focus {
+  border-bottom: 1px solid white;
+  box-shadow: 0 1px 0 0 white;
+}
+
+.page-footer .input-field input[type=text].valid {
+  border-bottom: 1px solid white;
+  box-shadow: 0 1px 0 0 white;
+}
+
+.page-footer .input-field input[type=text].invalid {
+  border-bottom: 1px solid white;
+  box-shadow: 0 1px 0 0 white;
+}
+
+.page-footer .input-field .prefix.active {
+  color: white;
+}
