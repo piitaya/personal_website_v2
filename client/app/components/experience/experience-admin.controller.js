@@ -4,9 +4,9 @@
 		.module('app.controllers')
 		.controller('ExperienceAdminController', ExperienceAdminController);
 
-	ExperienceAdminController.$inject = ['experienceService', 'dateService'];
+	ExperienceAdminController.$inject = ['experienceService', 'experienceTypeService', 'dateService'];
 
-	function ExperienceAdminController(experienceService, dateService) {
+	function ExperienceAdminController(experienceService, experienceTypeService, dateService) {
 		var vm = this;
 		
 		vm.experiences = [];
@@ -15,11 +15,22 @@
 		vm.update = update;
 		vm.remove = remove;
 		vm.duration = duration;
+		vm.icons = {};
+		vm.getIcon = getIcon;
 
 		activate();
 
 		function activate() {
-			vm.experiences = experienceService.query(); // returns all the pokemons
+			experienceService.query().$promise.then(function(experiences) {
+				vm.experiences = experiences;
+			});
+			experienceTypeService.query().$promise.then(function(types) {
+				vm.types = types;
+
+				types.forEach(function(type) {
+					vm.icons[type._id] = {icon: type.icon};
+				});
+			});
 		}
 
 		function create() {
@@ -62,6 +73,11 @@
 			else {
 				return "";
 			}
+		}
+
+		function getIcon(typeId) {
+			var icon = vm.icons[typeId];
+			return icon ? icon.icon : "";
 		}
 	}
 })();

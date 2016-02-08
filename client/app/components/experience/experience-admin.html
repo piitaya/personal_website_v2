@@ -2,7 +2,7 @@
 	<ul class="collapsible popout" data-collapsible="accordion" watch>
 		<li ng-repeat="experience in vm.experiences">
 			<div class="collapsible-header">
-				<i class="material-icons">work</i>
+				<i class="material-icons">{{vm.getIcon(experience.type)}}</i>
 				<span>{{experience.title}}</span>
 				<span style="float: right;">
 					<span>{{experience.startDate | date: "shortDate"}}</span>
@@ -14,9 +14,21 @@
 			</div>
 			<div class="collapsible-body card">
 				<div class="card-content">
-					<div input-field>
-						<input type="text" ng-model="experience.title">
-						<label>Titre</label>
+					<div class="row">
+						<div class="col m6">
+							<div input-field>
+								<input type="text" ng-model="experience.title">
+								<label>Titre</label>
+							</div>
+						</div>
+						<div class="col m6">
+							<div class="input-field">
+								<select class="" ng-model="experience.type" material-select watch>
+								    <option ng-repeat="type in vm.types" value="{{type._id}}">{{type.name}}</option>
+								</select>
+								<label>Type</label>
+							</div>
+						</div>
 					</div>
 					<div class="row">
 						<div class="checkbox-field col s12 m4">
@@ -84,9 +96,21 @@
 			</div>
 			<div class="collapsible-body card">
 				<div class="card-content">
-					<div input-field>
-						<input type="text" ng-model="vm.newExperience.title">
-						<label>Titre</label>
+					<div class="row">
+						<div class="col m6">
+							<div input-field>
+								<input type="text" ng-model="vm.newExperience.title">
+								<label>Titre</label>
+							</div>
+						</div>
+						<div class="col m6">
+							<div class="input-field">
+								<select class="" ng-model="vm.newExperience.type" material-select watch>
+								    <option ng-repeat="type in vm.types" value="{{type._id}}">{{type.name}}</option>
+								</select>
+								<label>Type</label>
+							</div>
+						</div>
 					</div>
 					<div class="row">
 						<div class="checkbox-field col s12 m4">

@@ -28,18 +28,28 @@ app.use(methodOverride());
 
 var API = {};
 API.auth = require('./routes/api/auth');
+
 API.experiences = require('./routes/api/experiences');
 API.skills = require('./routes/api/skills');
-API.skillTypes = require('./routes/api/skill-types');
+
+API.admin = {};
+API.admin.experiences = require('./routes/api/admin/experiences');
+API.admin.experienceTypes = require('./routes/api/admin/experience-types');
+API.admin.skills = require('./routes/api/admin/skills');
+API.admin.skillTypes = require('./routes/api/admin/skill-types');
 
 // Routes
 // Authentication
 app.post('/api/auth/signup', API.auth.localSignup);
 app.post('/api/auth/login', API.auth.localLogin);
 
-app.use('/api/admin', API.experiences);
-app.use('/api/admin', API.skills);
-app.use('/api/admin', API.skillTypes);
+app.use('/api', API.experiences);
+app.use('/api', API.skills);
+
+app.use('/api/admin', API.admin.experiences);
+app.use('/api/admin', API.admin.experienceTypes);
+app.use('/api/admin', API.admin.skills);
+app.use('/api/admin', API.admin.skillTypes);
 
 app.all('/*', function(req, res) {
 	res.sendFile(path.resolve(__dirname + '/../client/index.html'));

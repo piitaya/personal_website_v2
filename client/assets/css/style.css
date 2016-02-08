@@ -184,3 +184,14 @@ nav .button-collapse i {
 .page-footer .input-field .prefix.active {
   color: white;
 }
+
+.parallax-container {
+  min-height: 380px;
+  line-height: 0;
+  height: auto;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.parallax-container .section {
+  width: 100%;
+}

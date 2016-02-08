@@ -66,6 +66,13 @@
                 controllerAs: 'vm'
             })
 
+            .state('admin.experience-types', { // state for showing all experience types
+                url: '/admin/experience-types',
+                templateUrl: 'app/components/experience-type/experience-type-admin.html',
+                controller: 'ExperienceTypeAdminController',
+                controllerAs: 'vm'
+            })
+
             .state('admin.skills', { // state for showing all skills
                 url: '/admin/skills',
                 templateUrl: 'app/components/skill/skill-admin.html',
@@ -73,7 +80,7 @@
                 controllerAs: 'vm'
             })
 
-             .state('admin.skill-types', { // state for showing all skill types
+            .state('admin.skill-types', { // state for showing all skill types
                 url: '/admin/skill-types',
                 templateUrl: 'app/components/skill-type/skill-type-admin.html',
                 controller: 'SkillTypeAdminController',

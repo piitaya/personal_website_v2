@@ -13,7 +13,7 @@ var schema = Schema({
 	startDate: {type: Date, required: true},
 	endDate: {type: Date},
 	isCurrent: {type: Boolean, required: true},
-	type: {type: String}
+	type: {type: Schema.Types.ObjectId, ref: 'ExperienceType'}
 });
 
 schema.plugin(slug('title company'));
