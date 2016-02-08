@@ -10,7 +10,7 @@
 		var vm = this;
 		
 		vm.experiences = [];
-		vm.newExperience = {};
+		vm.newExperience = { isCurrent: false };
 		vm.create = create;
 		vm.update = update;
 		vm.remove = remove;
@@ -38,7 +38,7 @@
 			vm.newExperience.endDate = dateService.getDate(vm.newExperience.endDate);
 			experienceService.save(vm.newExperience).$promise.then(function(experience) {
 				vm.experiences.push(experience);
-				vm.newExperience = {};
+				vm.newExperience = { isCurrent: false };
 				$("#new-experience-form").removeClass("active");
 				console.log("Experience created");
 			});
