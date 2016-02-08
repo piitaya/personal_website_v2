@@ -21,8 +21,9 @@
 					<div class="card-image waves-effect waves-block waves-light">
 						<img class="activator" src="assets/images/cover.jpg">
 					</div>
-    				<div class="card-content">
-						<span class="card-title activator grey-text text-darken-4">{{experience.title}}<i class="material-icons right">more_vert</i></span>
+    				<div class="card-content" style="position: relative;">
+						<span class="card-title activator grey-text text-darken-4">{{experience.title}}</span>
+						<a style="position: absolute; top: -18px; right: 40px;" class="btn-floating waves-effect waves-light {{experience.type.color}} activator"><i class="material-icons">arrow_drop_up</i></a>
 						<p>
 							<span>{{experience.startDate | date: "MMMM yyyy"}}</span>
 							<span> - </span> 
@@ -30,11 +31,12 @@
 							<span ng-if="experience.isCurrent">Aujourd'hui</span>
 							<span>{{vm.duration(experience.startDate, experience.endDate, experience.isCurrent)}}</span>
 						</p>
+						<p>{{experience.company}}</p>
 						<p><a href="#">This is a link</a></p>
 					</div>
 					<div class="card-reveal">
 						<span class="card-title grey-text text-darken-4">Card Title<i class="material-icons right">close</i></span>
-						<p>{{experience.description}}</p>
+						<p style="white-space: pre-wrap;">{{experience.description}}</p>
 					</div>
 				</div>
 				<div class="timeline-badge {{experience.type.color}} white-text"><i class="material-icons">{{experience.type.icon}}</i></div>
