@@ -3,7 +3,7 @@
 		<li ng-repeat="skill in vm.skills">
 			<div class="collapsible-header">
 				<i class="material-icons">{{vm.getIcon(skill.type)}}</i>
-				<span>{{skill.name}}</span>
+				<span class="truncate">{{skill.name}}</span>
 			</div>
 			<div class="collapsible-body card">
 				<div class="card-content">
@@ -34,7 +34,7 @@
 		<li>
 			<div id="new-skill-form" class="collapsible-header">
 				<i class="material-icons">add</i>
-				<span>Ajouter une nouvelle compétence</span>
+				<span class="truncate">Nouvelle compétence</span>
 			</div>
 			<div class="collapsible-body card">
 				<div class="card-content">

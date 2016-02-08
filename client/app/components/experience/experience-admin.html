@@ -1,10 +1,10 @@
 <div class="container">
 	<ul class="collapsible popout" data-collapsible="accordion" watch>
 		<li ng-repeat="experience in vm.experiences">
-			<div class="collapsible-header">
+			<div class="collapsible-header" style="position: relative;">
 				<i class="material-icons">{{vm.getIcon(experience.type)}}</i>
-				<span>{{experience.title}}</span>
-				<span style="float: right;">
+				<span class="truncate">{{experience.title}}</span>
+				<span style="position: absolute; right: 0;" class="hide-on-med-and-down">
 					<span>{{experience.startDate | date: "shortDate"}}</span>
 					<span> - </span> 
 					<span ng-if="!experience.isCurrent">{{experience.endDate | date: "shortDate"}}</span>
@@ -15,13 +15,13 @@
 			<div class="collapsible-body card">
 				<div class="card-content">
 					<div class="row">
-						<div class="col m6">
+						<div class="col m6 s12">
 							<div input-field>
 								<input type="text" ng-model="experience.title">
 								<label>Titre</label>
 							</div>
 						</div>
-						<div class="col m6">
+						<div class="col m6 s12">
 							<div class="input-field">
 								<select class="" ng-model="experience.type" material-select watch>
 								    <option ng-repeat="type in vm.types" value="{{type._id}}">{{type.name}}</option>
@@ -94,7 +94,7 @@
 		<li>
 			<div id="new-experience-form" class="collapsible-header">
 				<i class="material-icons">add</i>
-				<span>Ajouter une nouvelle experience</span>
+				<span class="truncate">Nouvelle experience</span>
 			</div>
 			<div class="collapsible-body card">
 				<div class="card-content">

@@ -1,15 +1,18 @@
-<div id="home" class="parallax-container valign-wrapper">
-	<div parallax>
-		<img ng-src="http://krescruz.github.io/angular-materialize/images/parallax1.jpg">
-	</div>
+<div id="home" class="parallax-container">
 	<div class="section no-pad-bot">
 		<div class="container">
-			<div class="row center">
-				<h5 class="header col s12 light">A modern responsive front-end framework based on Material Design</h5>
-				<a du-smooth-scroll="experience" style="margin-top: 100px;" class="btn-floating btn-large waves-effect waves-light red"><i class="material-icons">arrow_downward</i></a>
+			<br><br>
+			<h1 class="header center teal-text text-lighten-2">Parallax Template</h1>
+			<div class="center">
+				<h5 class="header col light">A modern responsive front-end framework based on Material Design</h5>
 			</div>
+			<div class="center">
+				<a du-smooth-scroll="experience" style="position: absolute; bottom: 10px; margin-left: -28px;" class="btn-floating btn-large waves-effect waves-light red"><i class="material-icons">arrow_downward</i></a>
+			</div>
+			<br><br>
 		</div>
 	</div>
+	<div parallax><img src="http://krescruz.github.io/angular-materialize/images/parallax1.jpg"></div>
 </div>
 
 <div id="experience" style="background: rgb(240,240,240);">
@@ -22,8 +25,9 @@
 						<img class="activator" src="assets/images/cover.jpg">
 					</div>
     				<div class="card-content" style="position: relative;">
+    					<a style="position: absolute; top: -18px; right: 40px;" class="btn-floating waves-effect waves-light {{experience.type.color}} activator"><i class="material-icons">expand_more</i></a>
 						<span class="card-title activator grey-text text-darken-4">{{experience.title}}</span>
-						<a style="position: absolute; top: -18px; right: 40px;" class="btn-floating waves-effect waves-light {{experience.type.color}} activator"><i class="material-icons">arrow_drop_up</i></a>
+						<p>{{experience.company}}</p>
 						<p>
 							<span>{{experience.startDate | date: "MMMM yyyy"}}</span>
 							<span> - </span> 
@@ -31,11 +35,9 @@
 							<span ng-if="experience.isCurrent">Aujourd'hui</span>
 							<span>{{vm.duration(experience.startDate, experience.endDate, experience.isCurrent)}}</span>
 						</p>
-						<p>{{experience.company}}</p>
-						<p><a href="#">This is a link</a></p>
 					</div>
 					<div class="card-reveal">
-						<span class="card-title grey-text text-darken-4">Card Title<i class="material-icons right">close</i></span>
+						<span class="card-title grey-text text-darken-4">Informations<i class="material-icons right">close</i></span>
 						<p style="white-space: pre-wrap;">{{experience.description}}</p>
 					</div>
 				</div>
@@ -45,10 +47,18 @@
 	</div>
 </div>
 
-<div id="parallax" class="parallax-container">
-	<div parallax>
-		<img ng-src="http://krescruz.github.io/angular-materialize/images/parallax1.jpg">
+<div id="home" class="parallax-container">
+	<div class="section no-pad-bot">
+		<div class="container">
+			<br><br>
+			<h1 class="header center teal-text text-lighten-2">Parallax Template</h1>
+			<div class="center">
+				<h5 class="header col light">A modern responsive front-end framework based on Material Design</h5>
+			</div>
+			<br><br>
+		</div>
 	</div>
+	<div parallax><img src="http://krescruz.github.io/angular-materialize/images/parallax1.jpg"></div>
 </div>
 
 <div id="elements">	

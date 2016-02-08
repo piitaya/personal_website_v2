@@ -3,7 +3,7 @@
 		<li ng-repeat="experienceType in vm.experienceTypes">
 			<div class="collapsible-header">
 				<i class="material-icons">{{experienceType.icon}}</i>
-				<span>{{experienceType.name}}</span>
+				<span class="truncate">{{experienceType.name}}</span>
 			</div>
 			<div class="collapsible-body card">
 				<div class="card-content">
@@ -29,7 +29,7 @@
 		<li>
 			<div id="new-experience-type-form" class="collapsible-header">
 				<i class="material-icons">add</i>
-				<span>Ajouter une nouveau type de compétence</span>
+				<span class="truncate">Nouveau type de compétence</span>
 			</div>
 			<div class="collapsible-body card">
 				<div class="card-content">
