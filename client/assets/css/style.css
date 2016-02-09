@@ -230,3 +230,12 @@ nav .button-collapse i {
 .slider-container {
   margin-bottom: 50px;
 }
+
+@media (max-width: 600px) {
+  .wow {
+    visibility: visible !important;
+    -webkit-animation-name: none !important;
+    -o-animation-name: none !important;
+    animation-name: none !important;
+  }
+}

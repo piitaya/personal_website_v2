@@ -276,3 +276,11 @@ nav {
 	margin-bottom: 50px;
 }
 
+@media (max-width: $small-screen) {
+    .wow {
+    	visibility: visible !important;
+    	-webkit-animation-name: none !important;
+    	-o-animation-name: none !important;
+    	animation-name: none !important;
+    }
+}

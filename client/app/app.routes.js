@@ -1,5 +1,9 @@
 (function () {
 	'use strict';
+    angular
+        .module('app')
+        .run(run);
+
 	angular
 		.module('app')
 		.config(config);
@@ -9,6 +13,15 @@
         .value('duScrollDuration', 1000)
         .value('duScrollOffset', 64)
         .value('duScrollBottomSpy', true);
+
+    run.$inject = ['$rootScope'];
+
+    function run($rootScope) {
+        new WOW().init();
+        $rootScope.$on('$routeChangeStart', function (next, current) {
+            new WOW().sync();
+        });
+    }
         
 	function config($stateProvider, $urlRouterProvider, $locationProvider) {
 		$locationProvider.html5Mode(true);

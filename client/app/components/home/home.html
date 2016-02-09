@@ -19,7 +19,7 @@
 	<div class="container">
 		<div class="timeline">
 			<div class="timeline-event" ng-repeat="experience in vm.experiences track by $index">
-				<div class="card timeline-content hoverable">
+				<div class="card timeline-content hoverable wow" ng-class="$index % 2 == 0 ? 'fadeInLeft' : 'fadeInRight'" data-wow-offset="200" data-mobile-mobile="false">
 					<div class="card-image waves-effect waves-block waves-light">
 						<img class="activator" src="assets/images/cover.jpg">
 					</div>
@@ -40,7 +40,7 @@
 						<p>{{experience.description}}</p>
 					</div>
 				</div>
-				<div class="timeline-badge {{experience.type.color}} white-text"><i class="material-icons">{{experience.type.icon}}</i></div>
+				<div class="timeline-badge {{experience.type.color}} white-text wow bounceIn"><i class="material-icons">{{experience.type.icon}}</i></div>
 			</div>
 		</div>
 	</div>
