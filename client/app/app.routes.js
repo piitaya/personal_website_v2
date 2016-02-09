@@ -17,9 +17,11 @@
     run.$inject = ['$rootScope'];
 
     function run($rootScope) {
-        new WOW().init();
+        var wow = new WOW({
+            mobile: false
+        });
         $rootScope.$on('$routeChangeStart', function (next, current) {
-            new WOW().sync();
+            wow.sync();
         });
     }
         
