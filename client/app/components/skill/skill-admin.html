@@ -15,7 +15,7 @@
 						<input type="number" ng-model="skill.power">
 						<label>Note</label>
 					</div>
-					<div style="margin-bottom: 50px;">
+					<div class="slider-container">
 						<div ng-class="vm.getSliderColor(skill.power)" ui-slider ng-model="skill.power" start=0 end=100 step=10 connect="lower"></div>
 					</div>
 					<div class="input-field">
@@ -46,7 +46,7 @@
 						<input type="number" ng-model="vm.newSkill.power">
 						<label>Note</label>
 					</div>
-					<div style="margin-bottom: 50px;">
+					<div class="slider-container">
 						<div ng-class="vm.getSliderColor(vm.newSkill.power)" ui-slider ng-model="vm.newSkill.power" start=0 end=100 step=10 connect="lower"></div>
 					</div>
 					<div class="input-field">

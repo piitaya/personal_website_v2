@@ -7,6 +7,7 @@ $small-screen: 600px !default;
 $medium-screen: 992px !default;
 $large-screen: 1200px !default;
 
+// FIXES //
 .body {
 	display: flex;
 	min-height: 100vh;
@@ -41,10 +42,14 @@ main {
     left: 0;
 }
 
+
 .checkbox-field {
 	margin-top: 32px;
 	margin-bottom: 27px;
 }
+
+// TIMELINE //
+
 $timeline-badge-size: 40px;
 $timeline-badge-margin: 10px;
 .timeline {
@@ -153,6 +158,8 @@ $timeline-badge-margin: 10px;
 	}
 }
 
+// SLIDER //
+
 .noUi-background {
     box-shadow: none;
 }
@@ -177,6 +184,8 @@ $timeline-badge-margin: 10px;
 	}
 }
 
+// NAVBAR //
+
 nav {
     height: 64px;
     line-height: 64px;
@@ -185,6 +194,8 @@ nav {
     	line-height: 64px;
     }
 }
+
+// FOOTER //
 
 .page-footer {
 	.input-field {
@@ -216,12 +227,52 @@ nav {
 	}
 }
 
+// PARALLAX
+
 .parallax-container {
-    min-height: 380px;
+	min-height: 400px;
     line-height: 0;
     height: auto;
     color: rgba(255,255,255,.9);
-     .section {
+    .section {
 		width: 100%;
 	}
+
+	.btn-action {
+		position: absolute;
+		bottom: 10px;
+		margin-left: -28px;
+	}
 }
+
+// 
+
+.collapsible-header {
+	position: relative;
+	.right-text {
+		position: absolute;
+		right: 0;
+		top: 0;
+		margin-right: 14.5px;
+	}
+}
+
+.card-content {
+	position: relative;
+	.btn-floating.action {
+		position: absolute;
+		top: -18px;
+		right: 40px;
+	}
+}
+
+.card-reveal {
+	p {
+		white-space: pre-wrap;
+	}
+}
+
+.slider-container {
+	margin-bottom: 50px;
+}
+

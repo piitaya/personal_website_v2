@@ -1,10 +1,10 @@
 <div class="container">
 	<ul class="collapsible popout" data-collapsible="accordion" watch>
 		<li ng-repeat="experience in vm.experiences">
-			<div class="collapsible-header" style="position: relative;">
+			<div class="collapsible-header">
 				<i class="material-icons">{{vm.getIcon(experience.type)}}</i>
 				<span class="truncate">{{experience.title}}</span>
-				<span style="position: absolute; right: 0;" class="hide-on-med-and-down">
+				<span class="right-text hide-on-med-and-down">
 					<span>{{experience.startDate | date: "shortDate"}}</span>
 					<span> - </span> 
 					<span ng-if="!experience.isCurrent">{{experience.endDate | date: "shortDate"}}</span>
