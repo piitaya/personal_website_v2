@@ -143,14 +143,24 @@ main {
   background: #4CAF50;
 }
 
-nav {
-  height: 64px;
-  line-height: 64px;
+.navbar-fixed.navbar-custom {
+  height: 48px;
 }
 
-nav .button-collapse i {
-  height: 64px;
-  line-height: 64px;
+.navbar-fixed.navbar-custom nav {
+  height: 48px;
+  line-height: 48px;
+}
+
+.navbar-fixed.navbar-custom nav .button-collapse i {
+  height: 48px;
+  line-height: 48px;
+  font-size: 2.1rem;
+}
+
+.navbar-fixed.navbar-custom .side-nav a {
+  height: 48px;
+  line-height: 48px;
 }
 
 .page-footer .input-field label {
@@ -167,7 +177,7 @@ nav .button-collapse i {
 }
 
 .page-footer .input-field input[type=text]:focus, .page-footer .input-field textarea.materialize-textarea:focus, .page-footer .input-field input[type=email]:focus {
-  order-bottom: 1px solid white;
+  border-bottom: 1px solid white;
   box-shadow: 0 1px 0 0 white;
 }
 
@@ -186,7 +196,7 @@ nav .button-collapse i {
 }
 
 .parallax-container {
-  min-height: 380px;
+  min-height: 450px;
   line-height: 0;
   height: auto;
   color: rgba(255, 255, 255, 0.9);
