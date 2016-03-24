@@ -7,7 +7,7 @@
 				<h5 class="header col light">A modern responsive front-end framework based on Material Design</h5>
 			</div>
 			<div class="center">
-				<a du-smooth-scroll="experience" style="position: absolute; bottom: 10px; margin-left: -28px;" class="btn-floating btn-large waves-effect waves-light red"><i class="material-icons">arrow_downward</i></a>
+				<a du-smooth-scroll="experience" class="btn-floating btn-action btn-large waves-effect waves-light red"><i class="material-icons">arrow_downward</i></a>
 			</div>
 			<br><br>
 		</div>
@@ -15,17 +15,16 @@
 	<div parallax><img src="http://krescruz.github.io/angular-materialize/images/parallax1.jpg"></div>
 </div>
 
-<div id="experience" style="background: rgb(240,240,240);">
+<div id="experience">
 	<div class="container">
 		<div class="timeline">
 			<div class="timeline-event" ng-repeat="experience in vm.experiences track by $index">
-				
-				<div class="card timeline-content">
+				<div class="card timeline-content hoverable wow" ng-class="$index % 2 == 0 ? 'fadeInLeft' : 'fadeInRight'" data-wow-offset="200" data-mobile-mobile="false">
 					<div class="card-image waves-effect waves-block waves-light">
 						<img class="activator" src="assets/images/cover.jpg">
 					</div>
-    				<div class="card-content" style="position: relative;">
-    					<a style="position: absolute; top: -18px; right: 40px;" class="btn-floating waves-effect waves-light {{experience.type.color}} activator"><i class="material-icons">expand_more</i></a>
+    				<div class="card-content">
+    					<a class="btn-floating action waves-effect waves-light {{experience.type.color}} activator"><i class="material-icons">expand_more</i></a>
 						<span class="card-title activator grey-text text-darken-4">{{experience.title}}</span>
 						<p>{{experience.company}}</p>
 						<p>
@@ -38,16 +37,16 @@
 					</div>
 					<div class="card-reveal">
 						<span class="card-title grey-text text-darken-4">Informations<i class="material-icons right">close</i></span>
-						<p style="white-space: pre-wrap;">{{experience.description}}</p>
+						<p>{{experience.description}}</p>
 					</div>
 				</div>
-				<div class="timeline-badge {{experience.type.color}} white-text"><i class="material-icons">{{experience.type.icon}}</i></div>
+				<div class="timeline-badge {{experience.type.color}} white-text wow bounceIn"><i class="material-icons">{{experience.type.icon}}</i></div>
 			</div>
 		</div>
 	</div>
 </div>
 
-<div id="home" class="parallax-container">
+<div id="parallax" class="parallax-container">
 	<div class="section no-pad-bot">
 		<div class="container">
 			<br><br>
@@ -73,7 +72,7 @@
 </div>
 
 <div class="fixed-action-btn">
-	<a du-smooth-scroll="home" class="btn-floating btn-large waves-effect waves-light red">
+	<a du-smooth-scroll="home" class="btn-floating btn-large waves-effect waves-light grey darken-3">
 		<i class="large material-icons">arrow_upward</i>
 	</a>
 </div>

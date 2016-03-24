@@ -205,3 +205,47 @@ main {
 .parallax-container .section {
   width: 100%;
 }
+
+.parallax-container .btn-action {
+  position: absolute;
+  bottom: 10px;
+  margin-left: -28px;
+}
+
+.collapsible-header {
+  position: relative;
+}
+
+.collapsible-header .right-text {
+  position: absolute;
+  right: 0;
+  top: 0;
+  margin-right: 14.5px;
+}
+
+.card-content {
+  position: relative;
+}
+
+.card-content .btn-floating.action {
+  position: absolute;
+  top: -18px;
+  right: 40px;
+}
+
+.card-reveal p {
+  white-space: pre-wrap;
+}
+
+.slider-container {
+  margin-bottom: 50px;
+}
+
+@media (max-width: 600px) {
+  .wow {
+    visibility: visible !important;
+    -webkit-animation-name: none !important;
+    -o-animation-name: none !important;
+    animation-name: none !important;
+  }
+}
